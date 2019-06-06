@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://demo.lambda.example.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://demo.lambda.example.com" xmlns:intf="http://demo.lambda.example.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://demo.lambda.example.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createInput">
+    <complexType/>
+   </element>
+   <element name="createInputResponse">
+    <complexType/>
+   </element>
+   <element name="testLambdaFunctionHandler">
+    <complexType/>
+   </element>
+   <element name="testLambdaFunctionHandlerResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="createInputRequest">
+
+      <wsdl:part element="impl:createInput" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testLambdaFunctionHandlerResponse">
+
+      <wsdl:part element="impl:testLambdaFunctionHandlerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createInputResponse">
+
+      <wsdl:part element="impl:createInputResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testLambdaFunctionHandlerRequest">
+
+      <wsdl:part element="impl:testLambdaFunctionHandler" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LambdaFunctionHandlerTest">
+
+      <wsdl:operation name="createInput">
+
+         <wsdl:input message="impl:createInputRequest" name="createInputRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createInputResponse" name="createInputResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="testLambdaFunctionHandler">
+
+         <wsdl:input message="impl:testLambdaFunctionHandlerRequest" name="testLambdaFunctionHandlerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:testLambdaFunctionHandlerResponse" name="testLambdaFunctionHandlerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LambdaFunctionHandlerTestSoapBinding" type="impl:LambdaFunctionHandlerTest">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createInput">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createInputRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createInputResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="testLambdaFunctionHandler">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testLambdaFunctionHandlerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testLambdaFunctionHandlerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LambdaFunctionHandlerTestService">
+
+      <wsdl:port binding="impl:LambdaFunctionHandlerTestSoapBinding" name="LambdaFunctionHandlerTest">
+
+         <wsdlsoap:address location="http://localhost:8085/WebServiceProject/services/LambdaFunctionHandlerTest"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
